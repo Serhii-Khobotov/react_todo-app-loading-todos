@@ -1,21 +1,23 @@
-import { Todo } from "../types/Todo"
-import cn from "classnames"
+import { Todo } from '../types/Todo';
+import cn from 'classnames';
 
 type Props = {
   todos: Todo[];
-}
+};
 
 export const TodoHeader: React.FC<Props> = ({ todos }) => {
-  const areAllTodosCompleted = (todos) => {
-    return todos.every(todo => todo.completed === true)
-  }
+  const areAllTodosCompleted = (checkTodos: Todo[]) => {
+    return checkTodos.every(todo => todo.completed);
+  };
 
   return (
     <header className="todoapp__header">
       {/* this button should have `active` class only if all todos are completed */}
       <button
         type="button"
-        className={cn('todoapp__toggle-all', { 'active': areAllTodosCompleted})}
+        className={cn('todoapp__toggle-all', {
+          active: areAllTodosCompleted(todos),
+        })}
         data-cy="ToggleAllButton"
       />
 
@@ -29,5 +31,5 @@ export const TodoHeader: React.FC<Props> = ({ todos }) => {
         />
       </form>
     </header>
-  )
-}
+  );
+};

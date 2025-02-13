@@ -16,7 +16,7 @@ export const TodoList: React.FC<Props> = ({ todos }) => {
           className={cn('todo', { completed: todo.completed === true })}
         >
           <label className="todo__status-label">
-          {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
             <input
               data-cy="TodoStatus"
               type="checkbox"

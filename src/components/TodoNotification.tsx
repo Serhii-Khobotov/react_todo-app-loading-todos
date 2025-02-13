@@ -1,25 +1,19 @@
-import cn from 'classnames'
+import cn from 'classnames';
 
 type Props = {
   errorText: string;
-}
+};
 
 export const TodoNotification: React.FC<Props> = ({ errorText }) => {
-  const errorNotification = document.querySelector('.notification');
-
-  const hideNotification = setTimeout(() => {() => {
-    errorNotification.fadeOut('fast')
-  }})
-
   return (
-      //DON'T use conditional rendering to hide the notification
-      //Add the 'hidden' class to hide the message smoothly 
+    //DON'T use conditional rendering to hide the notification
+    //Add the 'hidden' class to hide the message smoothly
     <div
       data-cy="ErrorNotification"
       className={cn('notification is-danger is-light has-text-weight-normal', {
-        'hidden': !errorText
+        hidden: !errorText,
       })}
-    > 
+    >
       <button data-cy="HideErrorButton" type="button" className="delete" />
       {errorText}
       {/* show only one message at a time */}
@@ -32,6 +26,6 @@ export const TodoNotification: React.FC<Props> = ({ errorText }) => {
       Unable to delete a todo
       <br />
       Unable to update a todo */}
-    </div> 
-  )
-}
+    </div>
+  );
+};

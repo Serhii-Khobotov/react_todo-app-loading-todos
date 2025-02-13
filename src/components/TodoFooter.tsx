@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { FilterField } from "../constants/FilterField";
 import { Todo } from "../types/Todo";
 import cn from 'classnames'
 
